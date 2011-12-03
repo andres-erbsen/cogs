@@ -7,7 +7,7 @@ then
     echo Error: $location not mounted >&2
     exit 1
 else
-    rsync -arv --delete $location/ $location.save/
+    rsync -av --delete $location/ $location.save/
 fi
 
 
