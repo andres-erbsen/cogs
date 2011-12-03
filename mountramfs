@@ -1,0 +1,14 @@
+#!/bin/bash
+
+location="${HOME}/.ramfs"
+
+if [ x"$(mount | grep $location)" == "x" ];
+then 
+    mount $location
+    rsync -av $location.save $location
+else
+    echo $location already mounted, not mounting >&2
+    exit
+fi
+
+
