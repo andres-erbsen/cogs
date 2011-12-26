@@ -1,0 +1,30 @@
+--- 
+:jump_to_open_message: true
+:accounts: 
+  :default: 
+    :sendmail: /usr/bin/msmtp -a andres.erbsen@gmail.com --read-envelope-from -t
+    :signature: /home/andres/.signature
+    :gpgkey: ""
+    :email: andres.erbsen@gmail.com
+    :alternates: 
+    - andres.erbsen@real.edu.ee
+    - andreserbsen@zoho.com
+    - andreserbsen@yahoo.com
+    :name: Andres Erbsen
+:ask_for_cc: true
+:col_jump: 2
+:editor: /usr/bin/vim -f -c 'setlocal spell spelllang=en_us' -c 'set filetype=mail'
+:discard_snippets_from_encrypted_messages: false
+:ask_for_bcc: false
+:thread_by_subject: false
+:default_attachment_save_dir: ""
+:ask_for_subject: true
+:edit_signature: false
+:poll_interval: 300
+:confirm_no_attachments: true
+:ask_for_from: false
+:wrap_width: 0
+:confirm_top_posting: true
+:ask_for_to: true
+:sent_source: maildir:/home/andres/mail/sent
+:slip_rows: 0

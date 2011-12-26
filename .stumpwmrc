@@ -1,0 +1,63 @@
+;; vim:filetype=lisp
+;; Change the Stumpwm prefix key: Use the menu key
+(set-prefix-key (kbd "Menu"))
+(run-shell-command "xmodmap -e 'keycode 133 = F20'" t)
+(run-shell-command "rm .xsession-errors")
+
+(setf *mouse-focus-policy* :click) ;; :ignore :sloppy: click
+
+;;; Window Appearance
+(setf *window-border-style* :thin)
+;; The width in pixels given to the borders of regular windows.
+(setf *normal-border-width* 0)
+;; The width in pixels given to the borders of windows with maxsize or ratio hints.
+(setf *maxsize-border-width* 0)
+;; The width in pixels given to the borders of transient or pop-up windows.
+(setf *transient-border-width* 0)
+
+;; ---  COLORS ---
+;;Window border colors
+(setf *focus-color* "green")
+(setf *unfocus-color* "black")
+;;Colors for the input box; these should fairly self-explanatory. 'set-fg-color' will change the color
+;;of the font in the echo area, for example, and the background will be green,
+;;and the rectangle's lines will be a thin yellow, of course.
+(set-bg-color "black")
+(set-fg-color "lightgreen")
+(set-border-color "yellow")
+
+;; commands
+(defcommand synapse () ()
+  (run-shell-command "synapse"))
+;; define keys
+(defmacro defkey-top (key cmd)
+  `(define-key *top-map* (kbd ,key) ,cmd))
+
+(defmacro defkeys-top (&rest keys)
+  (let ((ks (mapcar #'(lambda (k) (cons 'defkey-top k)) keys)))
+    `(progn ,@ks)))
+
+(defmacro defkey-root (key cmd)
+  `(define-key *root-map* (kbd ,key) ,cmd))
+
+(defmacro defkeys-root (&rest keys)
+  (let ((ks (mapcar #'(lambda (k) (cons 'defkey-root k)) keys)))
+    `(progn ,@ks)))
+
+(defkeys-top
+    ("XF86AudioLowerVolume" "exec amixer -q set Master 5- unmute")
+    ("XF86AudioRaiseVolume" "exec amixer -q set Master 5+ unmute")
+    ("XF86AudioMute"        "exec amixer -q sset Master toggle")
+    ("M-Tab"                "fnext")
+    ("M-ISO_Left_Tab"       "fprev")
+    ("M-ESC"                "gnext")
+    ("M-S-ESC"              "gprev")
+    ("M-dead_tilde"         "pull-hidden-prev")
+    ("M-dead_caron"         "pull-hidden-next")
+    ("M-F4"                 "delete")
+    ("M-F2"                 "synapse")
+)
+
+(defkeys-root
+    ("Menu"                 "send-escape")
+)
