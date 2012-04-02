@@ -9,6 +9,9 @@ xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 8 6 7 4
 # Color schemes and etc
 xrdb ~/.Xresources
 
+# Environment variable
+source ~/.profile
+
 # language (unicode)
 # export LANG="en_US.UTF-8"
 
@@ -22,4 +25,4 @@ xautolock -time 1 -locker slock &
 dropbox start &
 
 # start devmon and xmonad in consolekit session
-exec ck-launch-session bash -c "devmon & xmonad"
+exec ck-launch-session bash -c "devmon & $1"
