@@ -2,6 +2,7 @@
 [[ $- != *i* ]] && return
 
 export EDITOR="vim"
+export HISTCONTROL=ignoreboth # disable logging blank commands and duplicates
 
 alias ls='ls --color=auto'
 

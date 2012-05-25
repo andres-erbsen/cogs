@@ -1,5 +1,6 @@
 ! scrollbar style - rxvt (default), plain (most compact), next, or xterm
 URxvt.scrollBar: off
+urxvt*font: xft:inconsolata:size=10
 
 !! drop in Solarized colorscheme for Xresources/Xdefaults
 

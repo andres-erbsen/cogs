@@ -1,3 +1,7 @@
+desktop=$1
+# disable beep
+xset -b
+
 # cursor pointer icon
 xsetroot -cursor_name left_ptr
 
@@ -18,11 +22,20 @@ source ~/.profile
 # keyboard layout
 setxkbmap -layout ee
 
-# disable beep
-xset -b
+autostart=$( cat <<EOF
+    trayer --align right --expand true --widthtype percent --width 5 &
+    xautolock -time 1 -locker "slock" -corners 00-0 &
+    dropbox start &
+EOF
+)
 
-xautolock -time 1 -locker slock &
-dropbox start &
+cksession=$( cat <<EOF
+    devmon &
+    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+    dbus-launch nm-applet &
+    exec $desktop
+EOF
+)
 
-# start devmon and xmonad in consolekit session
-exec ck-launch-session bash -c "devmon & $1"
+(sleep 0.5;            bash -c "$autostart") &
+exec ck-launch-session bash -c "$cksession"
