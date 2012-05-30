@@ -1,4 +1,7 @@
+# Allow CDM to specify a desktop environment, default to mxonad
 desktop=$1
+[ -z "$desktop" ] && desktop=xmonad
+
 # disable beep
 xset -b
 
@@ -24,7 +27,11 @@ setxkbmap -layout ee
 
 autostart=$( cat <<EOF
     trayer --align right --expand true --widthtype percent --width 5 &
-    xautolock -time 1 -locker "slock" -corners 00-0 &
+    xautolock -time 1 \
+        -notify 5 \
+        -locker "slock" \
+        -notifier "xset dpms force off" \
+        -corners 000- &
     dropbox start &
 EOF
 )
@@ -38,4 +45,4 @@ EOF
 )
 
 (sleep 0.5;            bash -c "$autostart") &
-exec ck-launch-session bash -c "$cksession"
+ck-launch-session bash -c "$cksession"
