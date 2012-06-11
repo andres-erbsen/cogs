@@ -29,7 +29,7 @@ autostart=$( cat <<EOF
     trayer --align right --expand true --widthtype percent --width 5 &
     xautolock -time 1 \
         -notify 5 \
-        -locker "slock" \
+        -locker "bash -c 'fusermount -u /home/andres/download/0 ; slock'" \
         -notifier "xset dpms force off" \
         -corners 000- &
     dropbox start &

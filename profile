@@ -5,6 +5,4 @@
 [ -d "$HOME/.cabal/bin/" ] &&
     PATH=$PATH:$HOME/.cabal/bin
 
-EDITOR="vim"
-
-export PATH EDITOR
+export PATH
