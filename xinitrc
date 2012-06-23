@@ -37,7 +37,8 @@ EOF
 )
 
 cksession=$( cat <<EOF
-    devmon &
+     # Sync is needed, otherwise copying files to usb is PITA
+    devmon --no-gui --sync &
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
     dbus-launch nm-applet &
     exec $desktop
