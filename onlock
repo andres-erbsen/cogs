@@ -1,0 +1,4 @@
+#!/bin/sh
+
+fusermount -u /home/andres/download/0
+fusermount -u /home/andres/download/1
