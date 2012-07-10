@@ -1,0 +1,18 @@
+set mbox_type=Maildir
+set folder=~/mail
+set spoolfile=~/mail
+
+set header_cache=~/mail/.mutt.hcache
+
+set edit_headers=yes
+set editor="vim +/^$"
+
+set sendmail="/usr/bin/msmtp"
+set use_from=yes
+set from=andres@krutt.org
+set envelope_from=yes
+
+set sort=threads
+set sort_aux=last-date-received
+
+
