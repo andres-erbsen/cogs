@@ -26,7 +26,7 @@ source ~/.profile
 setxkbmap -layout ee
 
 autostart=$( cat <<EOF
-    trayer --align right --expand true --widthtype percent --width 5 &
+    trayer --align right --widthtype request &
     xautolock -time 1 \
         -notify 5 \
         -locker "bash -c '~/cogs/onlock; slock'" \
@@ -44,9 +44,9 @@ cksession=$( cat <<EOF
     devmon --no-gui --sync &
     /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
     dbus-launch nm-applet &
-    $desktop
+    exec $desktop
 EOF
 )
 
 (sleep 0.5;       bash -c "$autostart") &
-ck-launch-session bash -c "$cksession"
+exec ck-launch-session bash -c "$cksession"

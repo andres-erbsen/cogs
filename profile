@@ -4,5 +4,7 @@
     PATH=$PATH:$HOME/Dropbox/t/local/bin
 [ -d "$HOME/.cabal/bin/" ] &&
     PATH=$PATH:$HOME/.cabal/bin
+[ -d "$HOME/.gem/ruby/1.9.1/bin" ] &&
+    PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
 
 export PATH
