@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mydisplays_launch ()
+{
+    displays=$( ps -u $(whoami) -o cmd | tr ' ' '\n' |  grep -e ':[0-9][0-9]*' | sort | uniq )
+    for display in $displays; do
+        DISPLAY=$display $@ &
+    done
+}
+
+mydisplays_launch xautolock -locknow
