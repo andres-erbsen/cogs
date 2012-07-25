@@ -57,9 +57,9 @@ case "$1" in
        	case "$3" in
 	    close)
                 runhooks lidclose
-                # pm-suspend # slooow
-                runhooks suspend
-                echo -n mem >/sys/power/state
+                pm-suspend # slooow
+                # runhooks suspend
+                # echo -n mem >/sys/power/state
 		;;
 	    open)
                 runhooks lidopen
