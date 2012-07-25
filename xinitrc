@@ -27,11 +27,7 @@ setxkbmap -layout ee
 
 autostart=$( cat <<EOF
     trayer --align right --widthtype request &
-    xautolock -time 1 \
-        -notify 5 \
-        -locker "bash -c '~/cogs/onlock; slock'" \
-        -notifier "xset dpms force off" \
-        -corners 000- &
+    ~/cogs/idle &
     dropbox start &
     pgrep gpg-agent -u andres || gpg-agent --daemon \
               --enable-ssh-support \

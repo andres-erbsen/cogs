@@ -8,4 +8,4 @@ mydisplays_launch ()
     done
 }
 
-mydisplays_launch xautolock -locknow
+mydisplays_launch ~/cogs/turtlemode

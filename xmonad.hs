@@ -10,7 +10,7 @@ main = do
     , borderWidth = 0
     , handleEventHook    = fullscreenEventHook
     } `additionalKeys`
-    [ ((altMask .|. controlMask, xK_l),  spawn "xautolock -locknow") -- Lock screen
+    [ ((altMask .|. controlMask, xK_l),  spawn "~/cogs/turtlemode") -- Lock screen
     , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")-- Mute
     , ((0, 0x1008FF11), spawn "amixer -q set Master 9%-") -- Decrease volume.
     , ((0, 0x1008FF13), spawn "amixer -q set Master 3%+") -- Increase volume.
