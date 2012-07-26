@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "$(date +%s) + ${1} * 60" | bc > ~/.awakeuntil

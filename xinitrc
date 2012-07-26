@@ -26,7 +26,6 @@ source ~/.profile
 setxkbmap -layout ee
 
 autostart=$( cat <<EOF
-    trayer --align right --widthtype request &
     ~/cogs/idle &
     dropbox start &
     pgrep gpg-agent -u andres || gpg-agent --daemon \
