@@ -28,7 +28,7 @@ display=0 # Default display
 xtty=7 # First X tty be spawned?
 locktty=no # Can be used to lock a user to a tty (see example cdmrc)
 
-consolekit=yes # Use consolekit
+consolekit=no # Use consolekit
 consolekittime=30 # Wait for X session to register with consoleKit
 
 # Enable login shell (fixes issues with some keymaps, uses bash).
