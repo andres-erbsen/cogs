@@ -13,6 +13,8 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
 fi
 
 alias ls='ls --color=auto'
+alias grep='grep --color'
+alias color='grep --context=2000000 --color'
 alias ej='devmon --unmount-recent --no-gui'
 alias bat='echo "scale=2; \
            $(cat /sys/class/power_supply/BAT0/energy_now) / \
