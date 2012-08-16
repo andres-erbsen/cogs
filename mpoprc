@@ -11,16 +11,19 @@ account andres@krutt.org
 # certificate does not match krutt.org
 host mail.autistici.org
 user andres@krutt.org
+passwordeval cat ~/.keyring/andres@krutt.org.txt
 # sudo wget -O /usr/share/ca-certificates/autistici-ca.crt http://ca.autistici.org/ca.pem
 tls_trust_file /usr/share/ca-certificates/autistici-ca.crt
 
 account pq@lavabit.com
 host lavabit.com
 user pq@lavabit.com
+passwordeval cat ~/.keyring/pq@lavabit.com.txt
 
 account andres.erbsen@gmail.com
 host pop.gmail.com
 user andres.erbsen@gmail.com
+passwordeval cat ~/.keyring/andres.erbsen@gmail.com.txt
 keep on
 only_new on
 # ssl only :(
