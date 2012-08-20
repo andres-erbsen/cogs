@@ -20,5 +20,6 @@ alias bat='echo "scale=2; \
            $(cat /sys/class/power_supply/BAT0/energy_now) / \
            $(cat /sys/class/power_supply/BAT0/energy_full)" | bc -l'
 alias GET='wget -O- -o/dev/null'
+alias myip='GET http://automation.whatismyip.com/n09230945.asp'
 
 PS1='[\u@\h \W]\$ '
