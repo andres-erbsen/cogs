@@ -27,7 +27,7 @@ setxkbmap -layout ee
 
 autostart=$( cat <<EOF
     ~/cogs/idle &
-    dropbox start &
+    dropboxd &
     pgrep gpg-agent -u andres || gpg-agent --daemon \
               --enable-ssh-support \
               --write-env-file "${HOME}/.gpg-agent-info"
