@@ -1,5 +1,5 @@
 import XMonad
-import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.EZConfig
 import XMonad.Hooks.EwmhDesktops
 
 altMask = mod1Mask
@@ -8,14 +8,15 @@ main = do
   xmonad $ defaultConfig
     { terminal    = "urxvt"
     , borderWidth = 0
-    , handleEventHook    = fullscreenEventHook
-    } `additionalKeys`
-    [ ((altMask .|. controlMask, xK_l),  spawn "~/cogs/turtlemode") -- Lock screen
-    , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")-- Mute
-    , ((0, 0x1008FF11), spawn "amixer -q set Master 9%-") -- Decrease volume.
-    , ((0, 0x1008FF13), spawn "amixer -q set Master 3%+") -- Increase volume.
-    , ((0, 0x1008FF16), spawn "nyxmms2 prev") -- Audio previous.
-    , ((0, 0x1008FF14), spawn "nyxmms2 toggle") -- Play/pause
-    , ((0, 0x1008FF17), spawn "nyxmms2 next") -- Audio next
-    , ((0, xK_Print),   spawn "cd Dropbox/t/andres/vt/ && scrot")
+    , handleEventHook = fullscreenEventHook
+    } `additionalKeysP`
+    [ ("M-C-l",  spawn "~/cogs/turtlemode") -- Lock screen
+    , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")-- Mute
+    , ("<XF86AudioLowerVolume>", spawn "amixer -q set Master 8%-") -- Decrease volume.
+    , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 4%+") -- Increase volume.
+    , ("<XF86AudioPrev>", spawn "mpc -q prev")
+    , ("<XF86AudioPlay>", spawn "mpc --format '' | grep playing && mpc pause || mpc play")
+    , ("<XF86AudioStop>", spawn "mpc -q stop")
+    , ("<XF86AudioNext>", spawn "mpc -q next")
+    , ("<Print>",   spawn "cd Dropbox/t/andres/vt/ && scrot")
     ]
