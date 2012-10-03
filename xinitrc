@@ -23,7 +23,7 @@ source ~/.profile
 # export LANG="en_US.UTF-8"
 
 # keyboard layout
-setxkbmap -layout ee
+setxkbmap -layout ee -variant us
 
 autostart=$( cat <<EOF
     ~/cogs/idle &
