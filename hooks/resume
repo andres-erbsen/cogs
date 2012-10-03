@@ -1,0 +1,4 @@
+#!/bin/sh
+
+touch ~/RESUMED
+purple-remote setstatus?status=available

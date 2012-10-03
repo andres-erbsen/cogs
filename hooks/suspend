@@ -8,4 +8,5 @@ mydisplays_launch ()
     done
 }
 
+purple-remote setstatus?status=offline
 mydisplays_launch ~/cogs/turtlemode
