@@ -1,3 +1,5 @@
 [user]
 	email = andres.erbsen@gmail.com
 	name = Andres Erbsen
+[push]
+	default = simple
