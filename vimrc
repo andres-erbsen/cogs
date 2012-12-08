@@ -14,3 +14,10 @@ syntax enable
 let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
+
+set ts=4 sw=4
+
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+
