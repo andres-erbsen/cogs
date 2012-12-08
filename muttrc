@@ -13,6 +13,4 @@ set from=andres@krutt.org
 set envelope_from=yes
 
 set sort=threads
-set sort_aux=date-received
-
-
+set sort_aux=reverse-last-date-received
