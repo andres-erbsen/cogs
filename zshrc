@@ -1,1 +1,2 @@
-source ~/.shell
+. ~/.env
+. ~/.shellrc

@@ -1,20 +1,51 @@
 set mbox_type=Maildir
 set folder=~/mail
-set spoolfile=~/mail
+set spoolfile=+inbox
+set record=+sent;
+set mbox=+archive
 
-set header_cache=~/mail/.mutt.hcache
+#set header_cache=~/mail/.mutt.hcache
 
+set include=yes
 set edit_headers=yes
 set editor="vim +/^$"
 
 set sendmail="/usr/bin/msmtp"
 set use_from=yes
-set from=andres@krutt.org
+set from="Andres <andres@krutt.org>"
 set envelope_from=yes
 
 set sort=threads
-set sort_aux=reverse-last-date-received
-
+set sort_aux=last-date-received
 
 source /etc/Muttrc.gpg.dist
 set pgp_sign_as=0x9E403E27
+set crypt_replyencrypt = yes
+set crypt_replysign = yes
+message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
+send-hook . 'reset pgp_autoencrypt'
+send-hook "!~l ~t ojasild@fsfeurope\\.org" "set pgp_autoencrypt pgp_autosign"
+send-hook "!~l ~t repentinus@fsfe\\.org" "set pgp_autoencrypt pgp_autosign"
+send-hook "!~l ~t sandra\\.schumann426@gmail\\.com" "set pgp_autoencrypt pgp_autosign"
+send-hook "!~l ~t sandrasc_@krutt\\.org" "set pgp_autoencrypt pgp_autosign"
+send-hook "!~l ~t jrepan@gmail\\.com" "set pgp_autoencrypt pgp_autosign"
+send-hook "!~l ~t achernya@mit\\.edu" "set pgp_autoencrypt pgp_autosign"
+send-hook "!~l ~t adam@crossproduct\\.net" "set pgp_autoencrypt pgp_autosign"
+send-hook "!~l ~t glasgall@mit\\.edu" "set pgp_autoencrypt pgp_autosign"
+
+# mutt-kz notmuch configuration
+set nm_default_uri="notmuch:///home/andres/mail/" # path to the maildir
+set virtual_spoolfile=yes                         # enable virtual folders
+virtual-mailboxes \
+  "Inbox"     "notmuch://?query=tag:inbox and NOT tag:archive"\
+  "Unread"    "notmuch://?query=tag:unread"\
+  "Starred"   "notmuch://?query=tag:*"\
+  "Sent"      "notmuch://?query=tag:sent"\
+  "All"       "notmuch://?query=date:.."
+
+macro index \\ "<vfolder-from-query>"           # looks up a hand made query
+macro index A "<modify-labels>+archive -unread -inbox\n"        # tag as Archived
+macro index S "<modify-labels>-inbox -unread\n"                 # removed from inbox
+macro index J "<modify-labels-then-hide>-inbox -unread +junk\n" # tag as Junk mail
+macro index Y "<modify-labels>+*\n<sync-mailbox>"               # tag as starred
+macro index N "<modify-labels>-*\n<sync-mailbox>"               # tag as unstarred

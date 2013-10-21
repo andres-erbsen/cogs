@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# unmounting would fail on open files
-pkill -u "$(whoami)" encfs
-
-exec slock -c ~/cogs/unturtle

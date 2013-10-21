@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Environment variables
+source ~/.profile
+
+# Color schemes and etc
+xrdb ~/.Xresources
+
+# cursor pointer icon
+xsetroot -cursor_name left_ptr
+
+# disable beep
+xset -b
+
+# keyboard layout
+setxkbmap -layout ee -variant us
+
+# IBM Thinkpad Tracpoint scrolling
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 8 1
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 8 2
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 8 6 7 4 5

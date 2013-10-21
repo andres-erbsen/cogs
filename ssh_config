@@ -1,0 +1,13 @@
+Protocol 2
+
+host athena
+	Hostname athena.dialup.mit.edu
+	User andreser
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
+
+host linerva
+	Hostname linerva.mit.edu
+	User andreser
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes

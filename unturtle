@@ -1,5 +1,0 @@
-#!/bin/sh
-
-read -s password # assumed to be correct
-
-echo "$password" | encfs -S ~/.keyring.enc/ ~/.keyring

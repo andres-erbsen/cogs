@@ -1,5 +1,0 @@
-$include /etc/inputrc
-
-# search current input from history using up key
-"\e[A":history-search-backward
-"\e[B":history-search-forward

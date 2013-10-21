@@ -1,14 +1,6 @@
-
 export EDITOR="vim"
 
-GPG_TTY=$(tty)
-export GPG_TTY
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-  . "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-fi
-
+alias xopen='xdg-open'
 alias ls='ls --color=auto'
 alias grep='grep --color'
 alias color='grep --context=2000000 --color'
@@ -19,3 +11,11 @@ alias bat='echo "scale=2; \
 alias GET='wget -O- -o/dev/null'
 alias myip='GET http://automation.whatismyip.com/n09230945.asp'
 alias mplayer='mplayer -af scaletempo'
+alias cacaplayer='CACA_DRIVER=x11 CACA_GEOMETRY=256x50 CACA_FONT=5x7 mplayer -af scaletempo -vo caca'
+
+export GOPATH=~/Dropbox/t/programming/go
+PATH="${PATH}:/opt/android-sdk/tools/"
+PATH="${PATH}:/opt/android-ndk/"
+export PATH=$PATH:$GOPATH/bin
+
+alias addon-sdk="cd /opt/addon-sdk && source bin/activate; cd -"
