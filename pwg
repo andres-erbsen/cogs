@@ -1,7 +1,9 @@
 #!/bin/bash
 
+[[ ! -f ~/.accounts ]] && touch ~/.accounts
+
 if [[ $# -eq 0 ]]; then
-	echo "Please pick an acocunt" >&2
+	echo "Please pick an account" >&2
 	cat ~/.accounts
 	read account
 else 
