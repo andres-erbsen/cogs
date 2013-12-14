@@ -14,7 +14,7 @@ fi
 echo "Generating password for \"${account}\", master password please: " >&2
 read -s masterpw
 
-if ! grep "${account}" ~/.accounts; then
+if ! grep "${account}" ~/.accounts > /dev/null; then
 	echo "Again: " >&2
 	read -s againpw
 	if [ "$masterpw" != "$againpw" ]; then
