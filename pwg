@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then
+	echo "Please pick an acocunt" >&2
+	cat ~/.accounts
+	read account
+else 
+	account="${@}"
+fi
+
+
+echo "Generating password for \"${account}\", master password please: " >&2
+read -s masterpw
+
+if ! grep "${account}" ~/.accounts; then
+	echo "Again: " >&2
+	read -s againpw
+	if [ "$masterpw" != "$againpw" ]; then
+		echo "Passwords differ" >&2
+		exit 1
+	fi
+fi
+
+echo "${masterpw}${account}" | sha512sum | xxd -p -r | mnencode | head -1
+
+read -p "Did it work? (y/N): " >&2
+if [ "$REPLY" == "y" ]; then
+	accounts=$( ( echo "$account"; cat ~/.accounts ) | sort | uniq )
+	echo "$accounts" > ~/.accounts
+fi
