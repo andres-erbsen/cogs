@@ -1,3 +1,6 @@
+#!/bin/bash
+
+cp ~/.vimrc ~/cogs/vimrc
 cp ~/.mpoprc ~/cogs/mpoprc
 cp ~/.msmtprc ~/cogs/msmtprc
 cp ~/.muttrc ~/cogs/muttrc
