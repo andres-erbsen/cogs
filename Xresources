@@ -1,6 +1,6 @@
 URxvt*perl-ext-common: default,vtwheel,matcher
 urxvt*font: xft:inconsolata:size=10
-URxvt*url-launcher: /usr/bin/firefox
+URxvt*url-launcher: /usr/bin/chromium
 URxvt*saveLines:  10000
 URxvt*matcher.button: 1
 URxvt*scrollBar: off
