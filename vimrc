@@ -6,11 +6,15 @@ set shell=/usr/bin/zsh
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+au BufRead,BufNewFile *.md set filetype=markdown
+
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/syntastic'
 Bundle 'skammer/vim-css-color'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'dgryski/vim-godef'
+Bundle 'maxbrunsfeld/vim-yankstack'
 
 filetype plugin indent on
 syntax enable

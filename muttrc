@@ -8,7 +8,7 @@ set mbox=+archive
 
 set include=yes
 set edit_headers=yes
-set editor="vim +/^$"
+set editor="vim +set\\ tw=72 +/^$"
 
 set sendmail="/usr/bin/msmtp"
 set use_from=yes
@@ -24,14 +24,8 @@ set crypt_replyencrypt = yes
 set crypt_replysign = yes
 message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
 send-hook . 'reset pgp_autoencrypt'
-send-hook "!~l ~t ojasild@fsfeurope\\.org" "set pgp_autoencrypt pgp_autosign"
-send-hook "!~l ~t repentinus@fsfe\\.org" "set pgp_autoencrypt pgp_autosign"
-send-hook "!~l ~t sandra\\.schumann426@gmail\\.com" "set pgp_autoencrypt pgp_autosign"
-send-hook "!~l ~t sandrasc_@krutt\\.org" "set pgp_autoencrypt pgp_autosign"
-send-hook "!~l ~t jrepan@gmail\\.com" "set pgp_autoencrypt pgp_autosign"
-send-hook "!~l ~t achernya@mit\\.edu" "set pgp_autoencrypt pgp_autosign"
-send-hook "!~l ~t adam@crossproduct\\.net" "set pgp_autoencrypt pgp_autosign"
-send-hook "!~l ~t glasgall@mit\\.edu" "set pgp_autoencrypt pgp_autosign"
+
+source ~/.mutt-contacts
 
 # mutt-kz notmuch configuration
 set nm_default_uri="notmuch:///home/andres/mail/" # path to the maildir
