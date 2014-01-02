@@ -1,0 +1,11 @@
+[Unit]
+Description=gpg-agent for PGP and SSH keys
+
+[Service]
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/gpg-agent --daemon --enable-ssh-support --write-env-file "${HOME}/.gpg-agent-info"
+Restart=always
+
+[Install]
+WantedBy=default.target

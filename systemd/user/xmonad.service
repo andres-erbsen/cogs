@@ -1,0 +1,9 @@
+[Unit]
+Description=xmonad
+After=xorg.target
+Requires=xorg.target
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/xmonad
+[Install]
+WantedBy=desktop.target

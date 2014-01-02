@@ -1,0 +1,14 @@
+[Unit]
+Description=X settings
+After=xorg.target
+[Service]
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/setxkbmap -layout ee -variant us
+ExecStart=/usr/bin/xset -b
+ExecStart=/usr/bin/xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 8 1
+ExecStart=/usr/bin/xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 8 2
+ExecStart=/usr/bin/xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 8 6 7 4 5
+ExecStart=/usr/bin/xsetroot -cursor_name left_ptr
+[Install]
+WantedBy=desktop.target

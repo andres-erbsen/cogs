@@ -1,0 +1,11 @@
+[Unit]
+Description=XBindKeys key grabber
+After=xorg.target xmonad.service
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/xbindkeys -n
+KillMode=process
+
+[Install]
+WantedBy=desktop.target

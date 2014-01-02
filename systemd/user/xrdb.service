@@ -1,0 +1,12 @@
+[Unit]
+Description=Load X resources database from ~/.Xresources
+After=xorg.target xmonad.service
+
+[Service]
+Environment=DISPLAY=:0
+Type=oneshot
+ExecStart=/usr/bin/xrdb "${HOME}/.Xresources"
+KillMode=process
+
+[Install]
+WantedBy=desktop.target

@@ -9,8 +9,6 @@ cp ~/.notmuch-config ~/cogs/notmuch-config
 cp ~/.shellrc ~/cogs/shellrc
 cp ~/.ssh/config ~/cogs/ssh_config
 cp ~/.xmonad/xmonad.hs ~/cogs/xmonad.hs
-cp ~/.xprofile ~/cogs/xprofile
-cp ~/.xinitrc ~/cogs/xinitrc
 cp ~/.env ~/cogs/env
 cp ~/.zshrc ~/cogs/zshrc
 cp ~/.Xresources ~/cogs/Xresources
@@ -20,3 +18,6 @@ cp /etc/Muttrc.gpg.dist ~/cogs/etc/Muttrc.gpg.dist
 mkdir -p ~/cogs/fish/functions
 cp -r ~/.config/fish/functions ~/cogs/fish/
 cp ~/.config/fish/config.fish ~/cogs/fish/config.fish
+
+mkdir -p ~/cogs/systemd/user
+cp -r ~/.config/systemd/user ~/cogs/systemd/
