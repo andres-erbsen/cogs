@@ -1,6 +1,6 @@
 [Unit]
 Description=Adjusts screen brightness and color temperature to time of day
-After=xorg.service
+After=xorg.target
 [Service]
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/redshift -l %i

@@ -1,6 +1,6 @@
 [Unit]
 Description=XBindKeys key grabber
-After=xorg.target xmonad.service
+After=xorg.target
 
 [Service]
 Environment=DISPLAY=:0

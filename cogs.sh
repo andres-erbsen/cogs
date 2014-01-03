@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cp ~/.xinitrc ~/cogs/xinitrc
 cp ~/.vimrc ~/cogs/vimrc
 cp ~/.mpoprc ~/cogs/mpoprc
 cp ~/.msmtprc ~/cogs/msmtprc

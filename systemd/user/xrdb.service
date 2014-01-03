@@ -1,6 +1,6 @@
 [Unit]
 Description=Load X resources database from ~/.Xresources
-After=xorg.target xmonad.service
+After=xorg.target
 
 [Service]
 Environment=DISPLAY=:0
