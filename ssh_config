@@ -1,4 +1,10 @@
 Protocol 2
+ForwardX11 yes
+Compression yes
+
+ControlMaster auto
+ControlPersist yes
+ControlPath ~/.ssh/socket-%r@%h:%p
 
 host athena
 	Hostname athena.dialup.mit.edu
