@@ -20,6 +20,7 @@ filetype plugin indent on
 syntax enable
 set ts=4 sw=4
 
+set mouse=a
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
