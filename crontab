@@ -1,0 +1,3 @@
+MAILTO=andres@krutt.org
+@hourly /usr/bin/mpop -a && notmuch new
+@daily cat ~/.keyring/andreser@mit.edu.txt | kinit -l7d -f andreser

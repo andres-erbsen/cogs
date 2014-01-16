@@ -15,6 +15,7 @@ cp ~/.zshrc ~/cogs/zshrc
 cp ~/.Xresources ~/cogs/Xresources
 cp ~/.gnupg/gpg.conf ~/cogs/gpg.conf; # MKCOGS
 cp /etc/Muttrc.gpg.dist ~/cogs/etc/Muttrc.gpg.dist
+cp /var/spool/cron/andres ~/cogs/crontab
 
 mkdir -p ~/cogs/fish/functions
 cp -r ~/.config/fish/functions ~/cogs/fish/
