@@ -1,3 +1,5 @@
 [user]
 	email = andres@krutt.org
 	name = Andres Erbsen
+[push]
+	default = simple
