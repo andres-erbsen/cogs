@@ -17,3 +17,9 @@ host linerva
 	User andreser
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
+
+host xvm-console
+	Hostname xvm-console.mit.edu
+	User andreser
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
