@@ -1,5 +1,4 @@
 Protocol 2
-ForwardX11 yes
 Compression yes
 
 ControlMaster auto
@@ -11,12 +10,14 @@ host athena
 	User andreser
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
+	ForwardX11 yes
 
 host linerva
 	Hostname linerva.mit.edu
 	User andreser
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
+	ForwardX11 yes
 
 host xvm-console
 	Hostname xvm-console.mit.edu
