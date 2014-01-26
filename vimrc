@@ -1,7 +1,10 @@
+" INSTALL: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" vim +BundleInstall! +qall
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set shell=/usr/bin/zsh
+set shell=/bin/bash
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
