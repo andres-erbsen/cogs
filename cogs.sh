@@ -7,13 +7,14 @@ cp ~/.msmtprc ~/cogs/msmtprc
 cp ~/.muttrc ~/cogs/muttrc
 cp ~/.gitconfig ~/cogs/gitconfig
 cp ~/.notmuch-config ~/cogs/notmuch-config
-cp ~/.shellrc ~/cogs/shellrc
+cp ~/.aliases ~/cogs/aliases
+cp ~/.environment ~/cogs/environment
 cp ~/.ssh/config ~/cogs/ssh_config
 cp ~/.xmonad/xmonad.hs ~/cogs/xmonad.hs
 cp ~/.env ~/cogs/env
 cp ~/.zshrc ~/cogs/zshrc
 cp ~/.Xresources ~/cogs/Xresources
-cp ~/.gnupg/gpg.conf ~/cogs/gpg.conf; # MKCOGS
+cp ~/.gnupg/gpg.conf ~/cogs/gpg.conf
 cp /etc/Muttrc.gpg.dist ~/cogs/etc/Muttrc.gpg.dist
 cp /var/spool/cron/andres ~/cogs/crontab
 

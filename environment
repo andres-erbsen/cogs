@@ -1,0 +1,6 @@
+export EDITOR="vim"
+export GOPATH=~/Dropbox/t/programming/go
+PATH="${PATH}:/opt/android-sdk/tools/"
+PATH="${PATH}:/opt/android-ndk/"
+PATH="${PATH}:/usr/lib/go/pkg/tool/linux_amd64/"
+export PATH=$PATH:$GOPATH/bin

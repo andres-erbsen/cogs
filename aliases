@@ -1,0 +1,15 @@
+alias xopen='xdg-open'
+alias ls='ls --dereference --color=auto'
+alias grep='grep --color'
+alias color='grep --context=2000000 --color'
+alias ej='devmon --unmount-recent --no-gui'
+alias GET='wget -O- -o/dev/null'
+alias myip='GET http://automation.whatismyip.com/n09230945.asp'
+alias mplayer='mplayer -af scaletempo'
+alias cacaplayer='CACA_DRIVER=x11 CACA_GEOMETRY=256x50 CACA_FONT=5x7 mplayer -af scaletempo -vo caca'
+
+# do not work with fish
+# alias bat='echo "scale=2; \
+#            $(cat /sys/class/power_supply/BAT0/energy_now) / \
+#            $(cat /sys/class/power_supply/BAT0/energy_full)" | bc -l'
+# alias addon-sdk="cd /opt/addon-sdk && source bin/activate; cd -"
