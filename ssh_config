@@ -2,25 +2,44 @@ Protocol 2
 Compression yes
 
 ControlMaster auto
-ControlPersist yes
+ControlPersist 4h
 ControlPath ~/.ssh/socket-%r@%h:%p
+TCPKeepAlive no
+ServerAliveInterval 60
+ServerAliveCountMax 10
 
-host athena
+Host athena
 	Hostname athena.dialup.mit.edu
 	User andreser
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
 	ForwardX11 yes
 
-host linerva
+Host linerva
 	Hostname linerva.mit.edu
 	User andreser
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
 	ForwardX11 yes
 
-host xvm-console
+Host xvm-console
 	Hostname xvm-console.mit.edu
 	User andreser
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
+
+Host ozok
+	Hostname OZOK-THE-DESTROYER.MIT.EDU
+	User andreser
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
+	ForwardX11 yes
+
+Host nublu
+	Hostname localhost
+	User andres
+	Port 19999
+
+Host ben
+	Hostname ben.csail.mit.edu
+	User andreser
