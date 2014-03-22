@@ -8,7 +8,7 @@ set mbox=+archive
 
 set include=yes
 set edit_headers=yes
-set editor="vim +set\\ tw=72 +/^$"
+set editor="vim +set\\ tw=72\\ spell\\ spelllang=en_us\\ wrap +/^$"
 
 set sendmail="/usr/bin/msmtp"
 set use_from=yes
@@ -31,6 +31,8 @@ source ~/.mutt-contacts
 set nm_default_uri="notmuch:///home/andres/mail/" # path to the maildir
 set virtual_spoolfile=yes                         # enable virtual folders
 virtual-mailboxes \
+  "Andres"    "notmuch://?query=tag:inbox AND NOT tag:archive AND (to:andres OR to:andreser OR to:andres.erbsen OR to:r-h-c@mit.edu)"\
+  "MIT"    "notmuch://?query=tag:inbox AND NOT tag:archive AND from:mit.edu)"\
   "Inbox"     "notmuch://?query=tag:inbox and NOT tag:archive"\
   "Unread"    "notmuch://?query=tag:unread"\
   "Starred"   "notmuch://?query=tag:*"\
@@ -38,8 +40,8 @@ virtual-mailboxes \
   "All"       "notmuch://?query=date:.."
 
 macro index \\ "<vfolder-from-query>"           # looks up a hand made query
-macro index A "<modify-labels>+archive -unread -inbox\n"        # tag as Archived
-macro index S "<modify-labels>-inbox -unread\n"                 # removed from inbox
-macro index J "<modify-labels-then-hide>-inbox -unread +junk\n" # tag as Junk mail
-macro index Y "<modify-labels>+*\n<sync-mailbox>"               # tag as starred
-macro index N "<modify-labels>-*\n<sync-mailbox>"               # tag as unstarred
+macro index A "<modify-labels-then-hide>+archive -unread -inbox\n"        # tag as Archived
+macro index S "<modify-labels-then-hide>-inbox -unread\n"                 # removed from inbox
+macro index J "<modify-labels-then-hide>-inbox -unread +junk\n"           # tag as Junk mail
+macro index Y "<modify-labels>+*\n<sync-mailbox>"                         # tag as starred
+macro index N "<modify-labels>-*\n<sync-mailbox>"                         # tag as unstarred
