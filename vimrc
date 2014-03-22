@@ -10,6 +10,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufNewFile,BufRead,BufEnter *.tex setlocal spell spelllang=en_us tw=80 wrap
+au BufNewFile,BufRead,BufEnter *.md setlocal spell spelllang=en_us tw=80 wrap
+au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_us tw=80 wrap
 
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/syntastic'
@@ -27,3 +30,4 @@ set mouse=a
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
+
