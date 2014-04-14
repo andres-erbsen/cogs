@@ -1,0 +1,28 @@
+- /home/andres/archive
+- /home/andres/movies
+- /home/andres/music
+- /home/andres/pictures
+
+/home/andres/.config
+/home/andres/.electrum
+/home/andres/.gitconfig
+/home/andres/.gnupg
+/home/andres/.irssi
+/home/andres/.jitsi
+/home/andres/.keyring
+/home/andres/.accounts
+/home/andres/.mpoprc
+/home/andres/.msmtprc
+/home/andres/.muttrc
+/home/andres/.sup
+/home/andres/.notmuch-config
+/home/andres/.purple
+/home/andres/.xmpp-client
+/home/andres/.environment
+/home/andres/.aliases
+/home/andres/.ssh
+/home/andres/.xmonad
+/home/andres/.zshrc
+/home/andres/.zprofile
+
+- /home/andres/.**
