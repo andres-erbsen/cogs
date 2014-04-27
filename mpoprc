@@ -3,19 +3,22 @@ tls on
 tls_starttls on
 tls_certcheck on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
-delivery maildir ~/mail/inbox
 only_new off
 
 account andres@krutt.org
+delivery maildir ~/mail/andres@krutt.org/inbox
 # certificate does not match krutt.org
 host mail.autistici.org
+#imaphost mail.autistici.org
 user andres@krutt.org
 passwordeval cat ~/.keyring/andres@krutt.org.txt
 # sudo wget -O /usr/share/ca-certificates/autistici-ca.crt http://ca.autistici.org/ca.pem
 tls_trust_file /usr/share/ca-certificates/autistici-ca.crt
 
 account andres.erbsen@gmail.com
+delivery maildir ~/mail/andres.erbsen@gmail.com/inbox
 host pop.gmail.com
+#imaphost imap.gmail.com
 user andres.erbsen@gmail.com
 passwordeval cat ~/.keyring/andres.erbsen@gmail.com.txt
 keep on

@@ -1,0 +1,8 @@
+[Unit]
+Description=POP mail downloader triggered using IMAP IDLE
+
+[Service]
+ExecStart=/home/andres/cogs/pop-idle.sh %I
+
+[Install]
+WantedBy=default.target
