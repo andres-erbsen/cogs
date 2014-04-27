@@ -2,6 +2,7 @@
 - /home/andres/movies
 - /home/andres/music
 - /home/andres/pictures
+- /home/andres/programming/go/bin
 
 /home/andres/.config
 /home/andres/.electrum

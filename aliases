@@ -1,5 +1,6 @@
 alias xopen='xdg-open'
 alias ls='ls --dereference --color=auto'
+alias du='du --dereference'
 alias grep='grep --color'
 alias color='grep --context=2000000 --color'
 alias ej='devmon --unmount-recent --no-gui'
