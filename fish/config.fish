@@ -1,5 +1,6 @@
 if status --is-login
-	set PATH $PATH /usr/bin /sbin /usr/local/bin /home/andres/Dropbox/t/programming/go/bin /usr/lib/go/pkg/tool/linux_amd64/
+	set GOPATH ~/programming/go
+	set PATH $PATH /usr/bin /sbin /usr/local/bin $GOPATH/bin /usr/lib/go/pkg/tool/linux_amd64/ /home/andres/.gem/ruby/2.1.0/bin/
 end
 set TORMIT 18.187.1.68
 set TORMIT2 18.238.1.85

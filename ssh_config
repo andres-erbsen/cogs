@@ -2,14 +2,21 @@ Protocol 2
 Compression yes
 
 ControlMaster auto
-ControlPersist 4h
+ControlPersist 1h
 ControlPath ~/.ssh/socket-%r@%h:%p
 TCPKeepAlive no
-ServerAliveInterval 60
-ServerAliveCountMax 10
+ServerAliveInterval 10
+ServerAliveCountMax 3
 
 Host athena
 	Hostname athena.dialup.mit.edu
+	User andreser
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
+	ForwardX11 yes
+
+Host no-knife
+	Hostname no-knife.mit.edu
 	User andreser
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes
