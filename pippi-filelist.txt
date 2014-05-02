@@ -1,0 +1,10 @@
+/home/andres/cogs
+/home/andres/about
+/home/andres/computers
+/home/andres/mit
+/home/andres/paperwork
+/home/andres/writings
+/home/andres/talks
+/home/andres/.accounts
+
+- **
