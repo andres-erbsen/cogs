@@ -2,6 +2,7 @@
 
 cp ~/.xinitrc ~/cogs/xinitrc
 cp ~/.vimrc ~/cogs/vimrc
+cp ~/.vimperatorrc ~/cogs/vimperatorrc
 cp ~/.mpoprc ~/cogs/mpoprc
 cp ~/.msmtprc ~/cogs/msmtprc
 cp ~/.muttrc ~/cogs/muttrc
@@ -24,3 +25,4 @@ cp ~/.config/fish/config.fish ~/cogs/fish/config.fish
 
 mkdir -p ~/cogs/systemd/user
 cp -r ~/.config/systemd/user ~/cogs/systemd/
+cp /etc/systemd/system/pippinet.service ~/cogs/pippinet.service
