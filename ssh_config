@@ -15,15 +15,8 @@ Host athena
 	GSSAPIDelegateCredentials yes
 	ForwardX11 yes
 
-Host no-knife
-	Hostname no-knife.mit.edu
-	User andreser
-	GSSAPIAuthentication yes
-	GSSAPIDelegateCredentials yes
-	ForwardX11 yes
-
-Host linerva
-	Hostname linerva.mit.edu
+Host grumpy-fuzzball
+	Hostname grumpy-fuzzball.mit.edu
 	User andreser
 	GSSAPIAuthentication yes
 	GSSAPIDelegateCredentials yes

@@ -26,3 +26,5 @@ cp ~/.config/fish/config.fish ~/cogs/fish/config.fish
 mkdir -p ~/cogs/systemd/user
 cp -r ~/.config/systemd/user ~/cogs/systemd/
 cp /etc/systemd/system/pippinet.service ~/cogs/pippinet.service
+mkdir -p ~/cogs/openvpn
+cp /etc/openvpn/pippi.tedx.ee.conf ~/cogs/openvpn/pippi.tedx.ee.conf

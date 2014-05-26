@@ -1,4 +1,4 @@
-for annex in ~/archive ~/movies ~/music ~/pictures; do
+for annex in ~/archive; do
 	pushd "$annex"
 	git annex sync aurora
 	git annex copy . --to aurora

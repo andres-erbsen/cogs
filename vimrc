@@ -18,7 +18,7 @@ au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_us tw=80 wrap
 
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'gmarik/vundle'
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
 Bundle 'skammer/vim-css-color'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Blackrush/vim-gocode'
