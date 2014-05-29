@@ -1,0 +1,6 @@
+[Service]
+ExecStart=/usr/bin/pyhesiodfs -f /mit -o nonempty
+ 
+[Install]
+WantedBy=default.target
+
