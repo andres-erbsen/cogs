@@ -18,19 +18,19 @@ au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_us tw=80 wrap
 
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'gmarik/vundle'
-" Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 Bundle 'skammer/vim-css-color'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'dgryski/vim-godef'
-Bundle 'maxbrunsfeld/vim-yankstack'
+" Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'vim-pandoc/vim-pandoc-syntax'
 Bundle 'vim-pandoc/vim-pantondoc'
 
 filetype plugin indent on
 syntax enable
 set background=light
-colorscheme solarized
+" colorscheme solarized
 highlight Normal guibg=white
 set ts=4 sw=4
 

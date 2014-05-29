@@ -1,10 +1,13 @@
 #!/usr/bin/python2
 
+print ("xfinity.py")
+
 from splinter import Browser
 from time import sleep
 
 def xfinity(browser=None):
     if not browser:
+        print ("Making browser...")
         browser = Browser('phantomjs')
     print ("Trying google.com...")
     browser.visit('http://google.com/')
@@ -22,7 +25,7 @@ def xfinity(browser=None):
     print ("Submitting...")
     sleep(0.5) # it did not work without the sleeps
     browser.find_by_css('.startSessionButton').type(' \n')
-    sleep(2)
+    sleep(5)
     browser.ensure_success_response()
     print (browser.screenshot())
 

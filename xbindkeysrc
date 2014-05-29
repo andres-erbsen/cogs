@@ -1,0 +1,24 @@
+"amixer -q set Master 10%-"
+  XF86AudioLowerVolume
+"amixer -q set Master 10%+"
+  XF86AudioRaiseVolume
+"amixer -q set Master toggle"
+  XF86AudioMute
+
+"mpc -q prev"
+  XF86AudioPrev
+"mpc -q next"
+  XF86AudioNext
+
+"mpc --format '' | grep playing && mpc pause || mpc play"
+  XF86AudioPlay
+"mpc -q stop"
+  XF86AudioStop
+
+"cd ~/screenshots && scrot"
+  Print
+
+"slock"
+  Control+Alt + l
+"slock & systemctl suspend"
+  Control+Alt+Mod4 + l

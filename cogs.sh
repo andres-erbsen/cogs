@@ -12,6 +12,7 @@ cp ~/.aliases ~/cogs/aliases
 cp ~/.environment ~/cogs/environment
 cp ~/.ssh/config ~/cogs/ssh_config
 cp ~/.xmonad/xmonad.hs ~/cogs/xmonad.hs
+cp ~/.xbindkeysrc ~/cogs/xbindkeysrc
 cp ~/.env ~/cogs/env
 cp ~/.zshrc ~/cogs/zshrc
 cp ~/.Xresources ~/cogs/Xresources
