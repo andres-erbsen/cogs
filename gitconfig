@@ -3,3 +3,9 @@
 	name = Andres Erbsen
 [push]
 	default = simple
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false

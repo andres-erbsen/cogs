@@ -19,13 +19,13 @@ def xfinity(browser=None):
     browser.click_link_by_partial_text('Sign up')
     print ("Filling form...")
     browser.select("rateplanid", "spn")
+    browser.check('spn_terms')
     browser.fill('spn_postal', '12345')
     browser.fill('spn_email', 'mailer-daemon@xfinity.nnu.com')
-    browser.check('spn_terms')
     print ("Submitting...")
-    sleep(0.5) # it did not work without the sleeps
+    sleep(3) # it did not work without the sleeps
     browser.find_by_css('.startSessionButton').type(' \n')
-    sleep(5)
+    sleep(7)
     browser.ensure_success_response()
     print (browser.screenshot())
 

@@ -16,8 +16,8 @@ au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_us tw=80 wrap
 
 " let g:pantondoc_formatting_settings "h"
 
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'gmarik/vundle'
+" Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/syntastic'
 Bundle 'skammer/vim-css-color'
 Bundle 'jnwhiteh/vim-golang'
@@ -25,7 +25,7 @@ Bundle 'Blackrush/vim-gocode'
 Bundle 'dgryski/vim-godef'
 " Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'vim-pandoc/vim-pandoc-syntax'
-Bundle 'vim-pandoc/vim-pantondoc'
+" Bundle 'vim-pandoc/vim-pantondoc'
 
 filetype plugin indent on
 syntax enable
