@@ -15,6 +15,7 @@ cp ~/.xmonad/xmonad.hs ~/cogs/xmonad.hs
 cp ~/.xbindkeysrc ~/cogs/xbindkeysrc
 cp ~/.env ~/cogs/env
 cp ~/.zshrc ~/cogs/zshrc
+cp ~/.tmux.conf ~/cogs/tmux.conf
 cp ~/.Xresources ~/cogs/Xresources
 cp ~/.gnupg/gpg.conf ~/cogs/gpg.conf
 cp /etc/Muttrc.gpg.dist ~/cogs/etc/Muttrc.gpg.dist

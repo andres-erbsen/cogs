@@ -9,7 +9,7 @@ set shell=/bin/bash
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.md set filetype=markdown
 au BufNewFile,BufRead,BufEnter *.tex setlocal spell spelllang=en_us tw=80 wrap
 au BufNewFile,BufRead,BufEnter *.md setlocal spell spelllang=en_us tw=80 wrap
 au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_us tw=80 wrap
@@ -23,16 +23,20 @@ Bundle 'skammer/vim-css-color'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'dgryski/vim-godef'
-" Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'vim-pandoc/vim-pandoc-syntax'
 " Bundle 'vim-pandoc/vim-pantondoc'
 
 filetype plugin indent on
-syntax enable
-set background=light
-" colorscheme solarized
-highlight Normal guibg=white
 set ts=4 sw=4
+
+syntax enable
+if has('gui_running')
+	set guifont=Inconsolata\ 10
+	set background=light
+	colorscheme solarized
+	highlight Normal guibg=white
+endif
 
 set mouse=a
 set guioptions-=m  "remove menu bar
