@@ -17,7 +17,7 @@ au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_us tw=80 wrap
 " let g:pantondoc_formatting_settings "h"
 
 Bundle 'gmarik/vundle'
-" Bundle 'altercation/vim-colors-solarized'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/syntastic'
 Bundle 'skammer/vim-css-color'
 Bundle 'jnwhiteh/vim-golang'
@@ -42,4 +42,8 @@ set mouse=a
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'gofmt', 'go']
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
