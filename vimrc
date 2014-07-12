@@ -34,6 +34,7 @@ syntax enable
 if has('gui_running')
 	set guifont=Inconsolata\ 10
 	set background=light
+	let g:solarized_contrast = "high"
 	colorscheme solarized
 	highlight Normal guibg=white
 endif
