@@ -1,0 +1,65 @@
+lsblk
+gdisk /dev/sda
+cryptsetup benchmark 
+cryptsetup luksFormat -c aes-xts-plain64 -s 512 /dev/sda5
+cryptsetup luksOpen /dev/sda5 arch
+pvcreate /dev/mapper/arch
+lvcreate -L 20G arch -n root
+lvcreate -L 8G arch -n var
+lvcreate -l +100%FREE arch -n home
+mkfs.ext4 /dev/arch/home
+mkfs.ext4 /dev/arch/root
+mkfs.ext4 /dev/arch/var
+mount /dev/arch/root /mnt
+mkdir /mnt/{home,var}
+mount /dev/arch/home /mnt/home
+mount /dev/arch/var /mnt/var
+mount /dev/sda1 /mnt/boot
+pacstrap /mnt base vim fish sudo
+genfstab -p -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt fish
+# chsh warning: to log in, the shell has to be in /etc/shells
+sed -i 's/relatime/noatime,discard/' /etc/fstab
+
+echo myhostname > /etc/hostname
+ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
+vim /etc/locale.gen # en_US.UTF-8 UTF-8  
+locale-gen
+echo 'LANG=en_US.UTF-8' > /etc/locale.conf
+
+pacman -S syslinux efibootmgr
+mkdir -p /boot/EFI/syslinux
+cp -r /usr/lib/syslinux/efi64/* /boot/EFI/syslinux
+mount -t efivarfs efivarfs /sys/firmware/efi/efivars # fails (already mounted)
+efibootmgr -c -d /dev/sda -p 1 -l /EFI/syslinux/syslinux.efi -L "Syslinux"
+vim /boot/EFI/syslinux/syslinux.cfg # copy from existing system. ../ for BIOS, ../../ for EFI
+
+vim /etc/mkinitcpio.conf # base udev autodetect modconf block keyboard encrypt lvm2 resume filesystems fsck
+mkinitcpio -p linux
+sed -i 's/issue_discards = 0/issue_discards = 1/' /etc/lvm/lvm.conf
+
+passwd
+sudo useradd -m -g users -s /bin/bash andres
+mkdir /home/andres
+chown -R andres /home/andres
+passwd andres
+visudo # Defaults targetpw; all all all
+
+pacman -S netctl wpa_actiond wpa_supplicant ifplugd dialog
+systemctl enable netctl-auto@wlan0.service
+systemctl enable netctl-ifplugd@eth0.service
+# pacman -S networkmanager
+exit
+umount -R /mnt
+systemctl reboot
+
+pacman -S xorg-server xf86-video-intel xorg-xinit xorg-server-utils xf86-input-synaptics
+# pacman -S xf86-video-nouveau nouveau-dri mesa bumblebee bbswitch primus
+# gpasswd -a andres bumblebee
+systemctl start bumblebeed
+systemctl enable bumblebeed
+
+pacman -S cups system-config-printer hplip simple-scan
+
+pacman -S openntpd
+systemctl enable openntpd
