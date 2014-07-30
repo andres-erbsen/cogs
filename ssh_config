@@ -1,12 +1,12 @@
 Protocol 2
 Compression yes
 
-ControlMaster auto
-ControlPersist 1h
-ControlPath ~/.ssh/socket-%r@%h:%p
-TCPKeepAlive no
-ServerAliveInterval 10
-ServerAliveCountMax 3
+# ControlMaster auto
+# ControlPersist 1h
+# ControlPath ~/.ssh/socket-%r@%h:%p
+# TCPKeepAlive no
+# ServerAliveInterval 10
+# ServerAliveCountMax 3
 
 Host athena
 	Hostname athena.dialup.mit.edu
@@ -42,3 +42,7 @@ Host nublu
 Host ben
 	Hostname ben.csail.mit.edu
 	User andreser
+
+Host apple
+	Hostname 172.16.42.1
+	User root

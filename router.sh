@@ -1,3 +1,4 @@
+sudo systemctl stop netctl-ifplugd@enp0s25.service
 sudo ip addr add 10.18.0.1/24 dev enp0s25
 sudo sysctl net.ipv4.ip_forward=1
 sudo iptables -t nat -A POSTROUTING -o wlp3s0 -j MASQUERADE

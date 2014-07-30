@@ -22,6 +22,7 @@ cp /etc/Muttrc.gpg.dist ~/cogs/etc/Muttrc.gpg.dist
 cp /var/spool/cron/andres ~/cogs/crontab
 cp /etc/systemd/system/dhcpd4@.service ~/cogs/systemd/system/dhcpd4@.service
 cp /etc/dhcpd.conf ~/cogs/dhcpd.conf
+cp /etc/dhcpcd.conf ~/cogs/dhcpcd.conf
 
 mkdir -p ~/cogs/fish/functions
 cp -r ~/.config/fish/functions ~/cogs/fish/
