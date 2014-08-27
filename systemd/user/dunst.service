@@ -1,0 +1,13 @@
+[Unit]
+Description=Lightweight Notification Daemon
+After=xorg.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/dunst -key Pause -format "%%s: %%b" -geometry 0x0+0-0
+
+[Install]
+WantedBy=desktop.target
