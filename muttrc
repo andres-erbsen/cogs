@@ -11,19 +11,40 @@ set edit_headers=yes
 set editor="vim +set\\ tw=72\\ spell\\ spelllang=en_us\\ wrap +/^$"
 
 set sendmail="/usr/bin/msmtp"
-set use_from=yes
-set reverse_name
-set my_user = "andres@krutt.org"
-alternates andres.erbsen@krutt.org andreserbsen@gmail.com andres.erbsen@gmail.com andreser@mit.edu sookala@gmail.com theshad3@gmail.com tersorke@riseup.net andreserbsen@onenetbeyond.org pq@lavabit.com andres.erbsen@mit.edu
 set envelope_from=yes
+
+set reverse_name  
+set my_user="andres@krutt.org"
+set from="andres@krutt.org"
+alternates andres.erbsen@krutt.org andreserbsen@gmail.com andres.erbsen@gmail.com andreser@mit.edu sookala@gmail.com theshad3@gmail.com tersorke@riseup.net andreserbsen@onenetbeyond.org pq@lavabit.com andres.erbsen@mit.edu
+
+set thorough_search
+set pipe_decode
+set fast_reply
+set fcc_attach
+set forward_format = "Fwd: %s"
 
 set sort=threads
 set strict_threads="yes"
 set sort_browser="reverse-date"
 set sort_aux="last-date-received"
+set uncollapse_jump
+
+bind index gg       first-entry
+bind index G        last-entry
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+bind index p        recall-message
+
+bind pager k  previous-line
+bind pager j  next-line
+bind pager gg top
+bind pager G  bottom
+bind pager R  group-reply
+
+folder-hook . "exec collapse-all"
 unset collapse_unread
-bind index - collapse-thread
-bind index _ collapse-all
 
 source /etc/Muttrc.gpg.dist
 set pgp_sign_as=0x9E403E27
@@ -38,17 +59,14 @@ source ~/.mutt-contacts
 set nm_default_uri="notmuch:///home/andres/mail/" # path to the maildir
 set virtual_spoolfile=yes                         # enable virtual folders
 virtual-mailboxes \
-  "Andres"    "notmuch://?query=tag:inbox AND NOT tag:archive AND (to:andres OR to:andreser OR to:andres.erbsen OR to:r-h-c@mit.edu OR to:dename@mit.edu OR to:dename-users@mit.edu)"\
+  "Andres"    "notmuch://?query=tag:inbox AND NOT tag:archive AND (to:andres OR to:andreser OR to:andres.erbsen OR to:r-h-c@mit.edu OR to:random-hall@mit.edu OR to:dename@mit.edu OR to:dename-users@mit.edu)"\
   "MIT"    "notmuch://?query=tag:inbox AND NOT tag:archive AND from:mit.edu)"\
   "Inbox"     "notmuch://?query=tag:inbox"\
   "Unread"    "notmuch://?query=tag:unread"\
-  "Starred"   "notmuch://?query=tag:*"\
-  "Sent"      "notmuch://?query=tag:sent"\
+  "Kept"      "notmuch://?query=tag:keep"\
+  "Sent"      "notmuch://?query=folder:sent"\
   "All"       "notmuch://?query=date:.."
 
-macro index \\ "<vfolder-from-query>"           # looks up a hand made query
-macro index A "<modify-labels-then-hide>+archive -unread -inbox\n"        # tag as Archived
-macro index S "<modify-labels-then-hide>-inbox -unread\n"                 # removed from inbox
-macro index J "<modify-labels-then-hide>-inbox -unread +junk\n"           # tag as Junk mail
-macro index Y "<modify-labels>+*\n<sync-mailbox>"                         # tag as starred
-macro index N "<modify-labels>-*\n<sync-mailbox>"                         # tag as unstarred
+macro index \\ "<vfolder-from-query>"
+macro index S "<modify-labels-then-hide>-inbox -unread\n<sync-mailbox>"
+macro index K "<modify-labels>+keep\n<sync-mailbox>"

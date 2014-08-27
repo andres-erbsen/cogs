@@ -51,8 +51,9 @@ other_email=andres.erbsen@krutt.org;andreserbsen@gmail.com;andres.erbsen@gmail.c
 #
 
 [new]
-tags=unread;inbox;
+tags=unnotified;unread;inbox;
 ignore=.offlineimap
+post-new=/home/andres/cogs/notmuch-notify.sh
 
 # Search configuration
 #
