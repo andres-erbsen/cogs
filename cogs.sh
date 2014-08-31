@@ -18,11 +18,6 @@ cp ~/.zshrc ~/cogs/zshrc
 cp ~/.tmux.conf ~/cogs/tmux.conf
 cp ~/.Xresources ~/cogs/Xresources
 cp ~/.gnupg/gpg.conf ~/cogs/gpg.conf
-cp /etc/Muttrc.gpg.dist ~/cogs/etc/Muttrc.gpg.dist
-cp /var/spool/cron/andres ~/cogs/crontab
-cp /etc/systemd/system/dhcpd4@.service ~/cogs/systemd/system/dhcpd4@.service
-cp /etc/dhcpd.conf ~/cogs/dhcpd.conf
-cp /etc/dhcpcd.conf ~/cogs/dhcpcd.conf
 
 mkdir -p ~/cogs/fish/functions
 cp -r ~/.config/fish/functions ~/cogs/fish/
@@ -30,6 +25,14 @@ cp ~/.config/fish/config.fish ~/cogs/fish/config.fish
 
 mkdir -p ~/cogs/systemd/user
 cp -r ~/.config/systemd/user ~/cogs/systemd/
+
+# pacman -Qii | awk '/^MODIFIED/ {print $2}' | rsync -v --files-from=- / ~/cogs
 cp /etc/systemd/system/pippinet.service ~/cogs/pippinet.service
+cp /etc/Muttrc.gpg.dist ~/cogs/etc/Muttrc.gpg.dist
+cp /var/spool/cron/andres ~/cogs/crontab
+cp /etc/systemd/system/dhcpd4@.service ~/cogs/systemd/system/dhcpd4@.service
+cp /etc/dhcpd.conf ~/cogs/dhcpd.conf
+cp /etc/dhcpcd.conf ~/cogs/dhcpcd.conf
+
 mkdir -p ~/cogs/openvpn
 cp /etc/openvpn/pippi.tedx.ee.conf ~/cogs/openvpn/pippi.tedx.ee.conf
