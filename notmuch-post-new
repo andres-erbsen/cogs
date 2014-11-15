@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# INSTALL:
+# mkdir ~/mail/.notmuch/hooks
+# cp notmuch-post-new ~/mail/.notmuch/hooks/post-new
+# chmod +x ~/mail/.notmuch/hooks/post-new
+
+/home/andres/mail/notmuch-post-new.sh $@
+/home/andres/cogs/notmuch-notify.sh $@

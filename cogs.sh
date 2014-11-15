@@ -5,7 +5,9 @@ cp ~/.vimrc ~/cogs/vimrc
 cp ~/.vimperatorrc ~/cogs/vimperatorrc
 cp ~/.mpoprc ~/cogs/mpoprc
 cp ~/.msmtprc ~/cogs/msmtprc
-cp ~/.muttrc ~/cogs/muttrc
+cp ~/.mutt/muttrc ~/cogs/muttrc
+cp ~/.mutt/mailcap ~/cogs/mailcap
+cp ~/mail/.notmuch/hooks/post-new ~/cogs/notmuch-post-new
 cp ~/.gitconfig ~/cogs/gitconfig
 cp ~/.notmuch-config ~/cogs/notmuch-config
 cp ~/.aliases ~/cogs/aliases
