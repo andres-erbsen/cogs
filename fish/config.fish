@@ -1,5 +1,5 @@
 if status --is-login
-	set GOPATH ~/programming/go
+	set -x GOPATH ~/programming/go
 	set PATH /usr/local/bin /usr/bin /bin /sbin  $GOPATH/bin /usr/lib/go/pkg/tool/linux_amd64/ /home/andres/.gem/ruby/2.1.0/bin/ /opt/android-sdk/platform-tools/
 end
 set TORMIT 18.187.1.68
