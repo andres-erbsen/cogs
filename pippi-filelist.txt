@@ -6,5 +6,6 @@
 /home/andres/writings
 /home/andres/talks
 /home/andres/.accounts
+/home/andres/programming/go/src/github.com/andres-erbsen
 
 - **
