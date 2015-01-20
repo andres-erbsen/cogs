@@ -32,6 +32,7 @@ Bundle 'JuliaLang/julia-vim'
 " Bundle 'vim-pandoc/vim-pantondoc'
 
 au FileType coq call coquille#FNMapping()
+let g:latex_to_unicode_auto = 1
 let g:latex_to_unicode_file_types = "coq"
 
 filetype plugin indent on
