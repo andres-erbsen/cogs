@@ -10,4 +10,7 @@ cat ~/.gpg-agent-info | sed 's/=/ /' | while read key value
 	set -U -x $key "$value"
 end
 
+# DEL in st
+bind \e\[P delete-char
+
 . ~/.aliases
