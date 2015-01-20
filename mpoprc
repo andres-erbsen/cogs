@@ -12,7 +12,7 @@ host mail.autistici.org
 #imaphost mail.autistici.org
 user andres@krutt.org
 passwordeval cat ~/.keyring/andres@krutt.org.txt
-# sudo wget -O /usr/share/ca-certificates/autistici-ca.crt http://ca.autistici.org/ca.pem
+# sudo wget -O  /etc/ca-certificates/trust-source/anchors/autistici-ca.crt http://ca.autistici.org/ca.pem
 tls_trust_file /usr/share/ca-certificates/autistici-ca.crt
 
 account andres.erbsen@gmail.com
