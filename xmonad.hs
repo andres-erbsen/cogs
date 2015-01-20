@@ -5,5 +5,5 @@ import XMonad.Hooks.ICCCMFocus
 main = xmonad defaultConfig {
     startupHook = setWMName "LG3D"
   , logHook = takeTopFocus
-  , terminal = "urxvt"
+  , terminal = "st -e tmux"
 }
