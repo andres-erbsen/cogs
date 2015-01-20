@@ -24,11 +24,20 @@ set fast_reply
 set fcc_attach
 set forward_format = "Fwd: %s"
 
+set date_format="%b %d %H:%M"
+set folder_format="%t %N %8s %f"
+set index_format="%S│%d|%-20.20a│%-100.100s│%-20.20t"
+set timeout=1
+
 set sort=threads
 set strict_threads="yes"
 set sort_browser="reverse-date"
 set sort_aux="last-date-received"
-set uncollapse_jump
+# set uncollapse_jump
+uncolor index "~(~N)"
+  color index brightgreen default "~(~N)"
+uncolor index "~N"
+  color index brightblue default "~N"
 
 bind index gg       first-entry
 bind index G        last-entry
@@ -44,7 +53,6 @@ bind pager G  bottom
 bind pager R  group-reply
 
 folder-hook . "exec collapse-all"
-unset collapse_unread
 
 source /etc/Muttrc.gpg.dist
 set pgp_sign_as=0x9E403E27
@@ -71,5 +79,12 @@ virtual-mailboxes \
   "All"       "notmuch://?query=date:.."
 
 macro index \\ "<vfolder-from-query>"
-macro index S "<modify-labels-then-hide>-inbox -unread\n"
-macro index K "<modify-labels>+keep\n<sync-mailbox>"
+macro index I "<modify-labels>+inbox\n<sync-mailbox>"
+macro pager I "<modify-labels>+inbox\n<sync-mailbox>"
+macro index S "<modify-labels-then-hide>-inbox\n"
+macro pager S "<modify-labels-then-hide>-inbox\n<exit>"
+macro index M "<modify-labels-then-hide>-inbox +muted\n"
+macro pager M "<modify-labels-then-hide>-inbox +muted<exit>"
+macro index K "<modify-labels>+flagged\n<sync-mailbox>"
+macro pager K "<modify-labels>+flagged\n<sync-mailbox>"
+macro index <f5> "<sync-mailbox>"
