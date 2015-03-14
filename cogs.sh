@@ -21,6 +21,7 @@ cp ~/.Xresources ~/cogs/Xresources
 cp ~/.gnupg/gpg.conf ~/cogs/gpg.conf
 cp /etc/udev/rules.d/95-monitor-hotplug.rules ~/cogs/etc/udev_rules.d_95-monitor-hotplug.rules
 cp /usr/local/bin/hotplug_monitor.sh hotplug_monitor.sh
+grep -v "PRIVATE" ~/mail/notmuch-post-new.sh > notmuch-post-new.sh
 
 mkdir -p ~/cogs/fish/functions
 cp -r ~/.config/fish/functions ~/cogs/fish/
