@@ -1,6 +1,22 @@
-export EDITOR="vim"
-export GOPATH=~/programming/go
-PATH="${PATH}:/opt/android-sdk/tools/"
-PATH="${PATH}:/opt/android-ndk/"
+#!/bin/sh
+
+eexport() {
+	export "$@"
+    echo "$@"
+}
+
+eexport "GOPATH=${HOME}/programming/go"
 PATH="${PATH}:/usr/lib/go/pkg/tool/linux_amd64/"
-export PATH=$PATH:$GOPATH/bin
+PATH="${PATH}:/home/andres/programming/pbe"
+PATH="${PATH}:$GOPATH/bin"
+echo "PATH=${PATH}"
+
+eexport "EDITOR=gvim"
+eexport "BROWSER=chromium"
+eexport "GPG_TTY=$(tty)"
+cat "${HOME}/.gpg-agent-info" 2>/dev/null || true
+
+eexport DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/dbus/user_bus_socket
+eexport GTK_IM_MODULE='uim'
+eexport QT_IM_MODULE='uim'
+eexport XMODIFIERS='@im=uim'
