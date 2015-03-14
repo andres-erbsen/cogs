@@ -30,12 +30,8 @@ mkdir -p ~/cogs/systemd/user
 cp -r ~/.config/systemd/user ~/cogs/systemd/
 
 # pacman -Qii | awk '/^MODIFIED/ {print $2}' | rsync -v --files-from=- / ~/cogs
-cp /etc/systemd/system/pippinet.service ~/cogs/pippinet.service
 cp /etc/Muttrc.gpg.dist ~/cogs/etc/Muttrc.gpg.dist
 cp /var/spool/cron/andres ~/cogs/crontab
 cp /etc/systemd/system/dhcpd4@.service ~/cogs/systemd/system/dhcpd4@.service
 cp /etc/dhcpd.conf ~/cogs/dhcpd.conf
 cp /etc/dhcpcd.conf ~/cogs/dhcpcd.conf
-
-mkdir -p ~/cogs/openvpn
-cp /etc/openvpn/pippi.tedx.ee.conf ~/cogs/openvpn/pippi.tedx.ee.conf
