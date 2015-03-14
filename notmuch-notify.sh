@@ -8,6 +8,5 @@ for msgid in $(notmuch search --output=messages tag:unnotified); do
 		sender=$(echo "$sender" | cut -d '<' -f2 | cut -d '>' -f1)
 	fi
 	env -i $(cat /proc/$(pgrep -u $USER xmonad)/environ | tr '\0' ' ') notify-send "$sender" "$subject"
-	echo env -i $(cat /proc/$(pgrep -u $USER xmonad)/environ | tr '\0' ' ') notify-send "$sender" "$subject"
 done
 notmuch tag -unnotified tag:unnotified
