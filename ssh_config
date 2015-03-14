@@ -15,17 +15,11 @@ Host athena
 	GSSAPIDelegateCredentials yes
 	ForwardX11 yes
 
-Host grumpy-fuzzball
-	Hostname grumpy-fuzzball.mit.edu
-	User andreser
-	GSSAPIAuthentication yes
-	GSSAPIDelegateCredentials yes
-	ForwardX11 yes
-
 Host xvm-console
 	Hostname xvm-console.mit.edu
 	User andreser
 	GSSAPIAuthentication yes
+	PubkeyAuthentication no
 
 Host ozok
 	Hostname OZOK-THE-DESTROYER.MIT.EDU
@@ -46,3 +40,14 @@ Host ben
 Host apple
 	Hostname 172.16.42.1
 	User root
+
+Host kakuke
+	ProxyCommand ssh pippi.tedx.ee -W localhost:60001
+
+Host must
+	ProxyCommand ssh pippi.tedx.ee -W localhost:60002
+
+Host nickolai-coqdev
+	Hostname nickolai-coqdev.csail.mit.edu
+	ForwardX11 yes
+	User andreser
