@@ -11,11 +11,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/dbus/user_bus_socket
-
-setxkbmap -option caps:escape
+setxkbmap ee -variant us -option caps:escape
 xbindkeys & # cannot run as service, requires logind session (as with devmon)
-xset m 3 0
+#xset m 3 0
+
+~/.environment | xargs systemctl --user set-environment
 systemctl --user start desktop.target &
+/usr/local/bin/hotplug_monitor.sh &
 xmonad
 systemctl --user stop desktop.target
