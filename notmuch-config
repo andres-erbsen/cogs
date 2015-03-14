@@ -52,7 +52,7 @@ other_email=andres.erbsen@krutt.org;andreserbsen@gmail.com;andres.erbsen@gmail.c
 
 [new]
 tags=unnotified;unread;inbox;
-ignore=.offlineimap
+ignore=.offlineimap;.git
 
 # Search configuration
 #
