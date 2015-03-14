@@ -1,4 +1,4 @@
-URxvt.font: xft:Inconsolata:size=10:antialias=true:hinting=true
+URxvt.font: xft:Inconsolata:size=9:antialias=true:hinting=true
 
 URxvt*perl-ext-common: default,vtwheel,matcher
 URxvt*url-launcher: /usr/bin/chromium
