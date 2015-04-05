@@ -1,0 +1,29 @@
+[general]
+metadata = ~/mail/.offlineimap
+accounts = andreser@mit.edu
+
+[Account andreser@mit.edu]
+localrepository = local/andreser@mit.edu
+remoterepository = andreser@mit.edu
+postsynchook = notmuch new
+autorefresh = 10
+quick = 1
+maxage = 90
+
+[Repository local/andreser@mit.edu]
+type = Maildir
+localfolders = ~/mail/andreser@mit.edu
+
+[Repository andreser@mit.edu]
+type = IMAP
+remotehost = imap.exchange.mit.edu
+remoteport = 993
+remoteuser = andreser
+remotepassfile = ~/.keyring/andreser@mit.edu.txt
+ssl = yes
+cert_fingerprint = 0b61e53b58ed8605d933a668a022617ee62b1c84
+folderfilter = lambda foldername: foldername != 'Calendar'
+holdconnectionopen = yes
+idlefolders = ['INBOX']
+keepalive = 10
+readonly = True

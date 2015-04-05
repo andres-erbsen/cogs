@@ -18,6 +18,7 @@ cp ~/.xbindkeysrc ~/cogs/xbindkeysrc
 cp ~/.zshrc ~/cogs/zshrc
 cp ~/.tmux.conf ~/cogs/tmux.conf
 cp ~/.Xresources ~/cogs/Xresources
+cp ~/.offlineimaprc ~/cogs/offlineimaprc
 cp ~/.gnupg/gpg.conf ~/cogs/gpg.conf
 cp /etc/udev/rules.d/95-monitor-hotplug.rules ~/cogs/etc/udev_rules.d_95-monitor-hotplug.rules
 cp /usr/local/bin/hotplug_monitor.sh hotplug_monitor.sh
