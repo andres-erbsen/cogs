@@ -1,0 +1,121 @@
+Create Slave
+SyncState *
+
+# mailbox.org
+
+MaildirStore andreser@mailbox.org-local
+Path ~/mail/andreser@mailbox.org/
+Inbox ~/mail/andreser@mailbox.org/INBOX
+
+IMAPStore andreser@mailbox.org-remote
+Host imap.mailbox.org
+User andreser@mailbox.org
+SSLVersions TLSv1.2
+SSLType IMAPS
+PassCmd "cat $HOME/.keyring/andreser@mailbox.org.txt"
+
+Channel andreser@mailbox.org
+Master :andreser@mailbox.org-remote:
+Slave :andreser@mailbox.org-local:
+Patterns *
+Sync PullNew PullFlags PushFlags
+
+# MIT Exchange over IMAP with strict TLS and CA pinning
+MaildirStore andreser@mit.edu-local
+Path ~/mail/andreser@mit.edu/
+Inbox ~/mail/andreser@mit.edu/INBOX
+
+IMAPStore andreser@mit.edu-remote
+Host imap.exchange.mit.edu
+SSLVersions TLSv1.2
+SSLType IMAPS
+SystemCertificates no
+CertificateFile /etc/ssl/certs/GeoTrust_Global_CA.pem
+User andreser
+PassCmd "cat $HOME/.keyring/andreser@mit.edu.txt"
+PipelineDepth 200
+
+Channel andreser@mit.edu
+Master :andreser@mit.edu-remote:
+Slave :andreser@mit.edu-local:
+Patterns INBOX "Sent Items"
+Sync PullNew PullFlags PushFlags
+
+# krutt.org, with strict TLS
+
+MaildirStore andres@krutt.org-local
+Path ~/mail/andres@krutt.org/
+Inbox ~/mail/andres@krutt.org/INBOX
+
+IMAPStore andres@krutt.org-remote
+Host mail.autistici.org
+SSLVersions TLSv1.2
+SSLType IMAPS
+SystemCertificates no
+# sudo sh -c 'curl http://www.autistici.org/static/certs/ca.crt > /etc/ca-certificates/trust-source/anchors/autistici-ca.crt'
+CertificateFile /etc/ca-certificates/trust-source/anchors/autistici-ca.crt
+User andres@krutt.org
+PassCmd "cat ~/.keyring/andres@krutt.org.txt"
+
+Channel andres@krutt.org
+Master :andres@krutt.org-remote:
+Slave :andres@krutt.org-local:
+Patterns *
+Sync PullNew PullFlags PushFlags
+
+# GMail: andres.erbsen@gmail.com
+
+MaildirStore andres.erbsen@gmail.com-local
+Path ~/mail/andres.erbsen@gmail.com/
+Inbox ~/mail/andres.erbsen@gmail.com/INBOX
+
+IMAPStore andres.erbsen@gmail.com-remote
+Host imap.gmail.com
+User andres.erbsen@gmail.com
+SSLVersions TLSv1.2
+SSLType IMAPS
+PassCmd "cat $HOME/.keyring/andres.erbsen@gmail.com.txt"
+
+Channel andres.erbsen@gmail.com
+Master :andres.erbsen@gmail.com-remote:
+Slave :andres.erbsen@gmail.com-local:
+Patterns *
+Sync PullNew PullFlags PushFlags
+
+# GMail: andreser.async@gmail.com
+
+MaildirStore andreser.async@gmail.com-local
+Path ~/mail/andreser.async@gmail.com/
+Inbox ~/mail/andreser.async@gmail.com/INBOX
+
+IMAPStore andreser.async@gmail.com-remote
+Host imap.gmail.com
+User andreser.async@gmail.com
+SSLVersions TLSv1.2
+SSLType IMAPS
+PassCmd "cat $HOME/.keyring/andreser.async@gmail.com.txt"
+
+Channel andreser.async@gmail.com
+Master :andreser.async@gmail.com-remote:
+Slave :andreser.async@gmail.com-local:
+Patterns *
+Sync PullNew PullFlags PushFlags
+
+# GMail: theshad3@gmail.com
+
+MaildirStore theshad3@gmail.com-local
+Path ~/mail/theshad3@gmail.com/
+Inbox ~/mail/theshad3@gmail.com/INBOX
+
+IMAPStore theshad3@gmail.com-remote
+Host imap.gmail.com
+User theshad3@gmail.com
+SSLVersions TLSv1.2
+SSLType IMAPS
+PassCmd "cat $HOME/.keyring/theshad3@gmail.com.txt"
+
+Channel theshad3@gmail.com
+Master :theshad3@gmail.com-remote:
+Slave :theshad3@gmail.com-local:
+Patterns *
+Sync PullNew PullFlags PushFlags

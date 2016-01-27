@@ -1,22 +1,12 @@
-#!/bin/sh
-#
-# ~/.xinitrc
-#
-# Executed by startx (run your window manager from here)
-
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for f in /etc/X11/xinit/xinitrc.d/*; do
-    [ -x "$f" ] && . "$f"
-  done
-  unset f
-fi
-
-setxkbmap ee -variant us -option caps:escape
-xbindkeys & # cannot run as service, requires logind session (as with devmon)
-#xset m 3 0
-
-~/.environment | xargs systemctl --user set-environment
-systemctl --user start desktop.target &
-/usr/local/bin/hotplug_monitor.sh &
-xmonad
-systemctl --user stop desktop.target
+urxvtd &
+xbindkeys &
+/usr/bin/dunst -all_key Home -Format "%S: %b" -geometry 0x0+0-0 &
+xrdb ~/.Xresources
+redshift &
+setxkbmap -layout ee -variant us
+xset -b
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 8 1
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 8 2
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 8 6 7 4 5
+xsetroot -cursor_name left_ptr
+exec xmonad

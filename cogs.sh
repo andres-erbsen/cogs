@@ -3,6 +3,7 @@
 cp ~/.xinitrc ~/cogs/xinitrc
 cp ~/.vimrc ~/cogs/vimrc
 cp ~/.vimperatorrc ~/cogs/vimperatorrc
+cp ~/.mbsyncrc ~/cogs/mbsyncrc
 cp ~/.mpoprc ~/cogs/mpoprc
 cp ~/.msmtprc ~/cogs/msmtprc
 cp ~/.mutt/muttrc ~/cogs/muttrc

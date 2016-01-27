@@ -12,7 +12,7 @@
 #
 
 [database]
-path=/home/andres/mail
+path=/home/oldie/mail
 
 # User configuration
 #
@@ -32,8 +32,8 @@ path=/home/andres/mail
 
 [user]
 name=Andres Erbsen
-primary_email=andres@krutt.org
-other_email=andres.erbsen@krutt.org;andreserbsen@gmail.com;andres.erbsen@gmail.com;andreser@mit.edu;sookala@gmail.com;theshad3@gmail.com;tersorke@riseup.net;andreserbsen@onenetbeyond.org;pq@lavabit.com;andres.erbsen@mit.edu;
+primary_email=andreser@mit.edu
+other_email=andres.erbsen@krutt.org;andreserbsen@gmail.com;andres.erbsen@gmail.com;andreser@mit.edu;sookala@gmail.com;theshad3@gmail.com;tersorke@riseup.net;andreserbsen@onenetbeyond.org;pq@lavabit.com;andres.erbsen@mit.edu;andreser@mailbox.org;andres@andres.systems
 
 # Configuration for "notmuch new"
 #
@@ -52,7 +52,7 @@ other_email=andres.erbsen@krutt.org;andreserbsen@gmail.com;andres.erbsen@gmail.c
 
 [new]
 tags=unnotified;unread;inbox;
-ignore=.offlineimap;.git
+ignore=.offlineimap;.git;.mbsyncstate;.uidvalidity
 
 # Search configuration
 #
