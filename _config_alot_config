@@ -1,0 +1,15 @@
+[accounts]
+    [[work]]
+        realname = Andres Erbsen
+        address = andreser@mit.edu
+        gpg_key = 42B73C0B
+        sendmail_command = msmtp --account=andreser@mit.edu -t
+        sent_box = maildir:///home/oldie/mail/andreser@mit.edu/sent
+        draft_box = maildir:///home/oldie/mail/andreser@mit.edu/drafts
+    [[gmail]]
+        realname = Andres Erbsen
+        address = andres.erbsen@gmail.com
+        gpg_key = D6C47A84
+        sendmail_command = msmtp --account=andres.erbsen@gmail.com -t
+        sent_box = maildir:///home/oldie/mail/andres.erbsen@gmail.com/sent
+        draft_box = maildir:///home/oldie/mail/andres.erbsen@gmail.com/drafts
