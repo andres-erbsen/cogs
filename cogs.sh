@@ -11,6 +11,7 @@ cp ~/.mutt/mailcap ~/cogs/mailcap
 cp ~/mail/.notmuch/hooks/post-new ~/cogs/notmuch-post-new
 cp ~/.gitconfig ~/cogs/gitconfig
 cp ~/.notmuch-config ~/cogs/notmuch-config
+cp ~/.config/alot/config ~/cogs/_config_alot_config
 cp ~/.aliases ~/cogs/aliases
 cp ~/.environment ~/cogs/environment
 cp ~/.ssh/config ~/cogs/ssh_config
